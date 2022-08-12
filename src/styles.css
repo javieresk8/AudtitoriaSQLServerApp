@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.mainText{
+  margin-top: 135px;
+  font-family: 'Monstreat';
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  /* line-height: 100; */
+  letter-spacing: -1px;
+  color: #00e099;
+  text-transform: uppercase;
+}
+
+.priceBackground {
+  background: #f6f6f6;
+}
+
+.pricePadd{
+  padding: 50px;
+
+}
+
+#blue{
+
+  background-color: #003056;
+  padding: 40px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+#light-blue{
+  background-color: #00a1d9;
+  padding: 40px;
+
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+
+}
+
+#orange{
+  background-color: #ec945e;
+  padding: 40px;
+
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+
+}
+
+#green{
+  background-color: #00e099;
+  padding: 40px;
+
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+
+
+}
+
+.pricePadd span{
+  font-size: 30px;
+}
+
+.pricePadd p{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+

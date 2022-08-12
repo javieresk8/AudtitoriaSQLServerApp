@@ -1,0 +1,156 @@
+
+<app-header></app-header>
+
+<div class="container mt-5 myContainerAbs col-md-8 hidden-sm">
+  <div class="row">
+    <div class="col-md-9">
+      <input
+        [(ngModel)]="nombreBase"
+        type="text" class="form-control myInput" placeholder="Nombre de la Base de Datos" aria-describedby="basic-addon1">
+    </div>
+    <div class="col-md-3">
+      <button
+        (click)="lanzarAuditoria()"
+        type="submit" class="btn btn-default form-control myButton">Auditar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Resultados de la Auditoría -->
+<div class="col-md-12 noPadding text-center">
+  <h1 class="mainText">Resultados de la Auditoría</h1>
+  <img class="withBottom" src="../../../assets/img/shapegreen.png">
+</div>
+<div class="col-md-12 text-center">
+  <h2>
+    Total Anomalías Encontradas: <span>{{totalAnomalias}}</span>
+  </h2>
+</div>
+
+<div id="section3" class="col-md-12 text-center priceBackground">
+  <div class="container pricePadd">
+    <div class="row">
+
+      <!-- Datos Anomalos -->
+      <div class="col-md-3">
+        <div  class="panel panel-default">
+          <div id="blue" class="panel-heading">
+            <h3 class="panel-title">Datos Anómalos</h3>
+            <span>{{datosAnomalos.length}}</span>
+          </div>
+          <div class="panel-body text-wrap">
+            <ul class="list-group" *ngFor="let dato of datosAnomalos">
+              <li class="list-group-item text-wrap">
+                <small><b>Tabla:</b>  {{dato.Tabla}}</small> <br>
+                <small><b>Restricción:</b>  <br>{{dato.Restriccion}}</small><br>
+                <small><b>Valor:</b>  {{dato.ValorAnomalo}}</small>
+              </li>
+              </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tablas Huerfanas -->
+      <div class="col-md-3">
+        <div  class="panel panel-default">
+          <div id="green" class="panel-heading">
+            <h3 class="panel-title">Tablas Huérfanas</h3>
+            <span>{{tablasHuerfanas.length}}</span>
+
+          </div>
+          <div class="panel-body text-wrap">
+            <ul class="list-group" *ngFor="let tabla of tablasHuerfanas">
+              <li class="list-group-item text-wrap">
+                <small><b>Nombre:</b>  {{tabla.tabla_huerfana}}</small>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Triggers -->
+      <div class="col-md-3">
+        <div  class="panel panel-default">
+          <div id="green" class="panel-heading">
+            <h3 class="panel-title">Triggers</h3>
+            <span>{{triggers.length}}</span>
+
+          </div>
+          <div class="panel-body text-wrap">
+            <ul class="list-group" *ngFor="let trigger of triggers">
+              <li class="list-group-item text-wrap">
+                <small><b>Nombre:</b>  {{trigger.nombre_trigger}}</small><br>
+                <small><b>Schema:</b> {{trigger.nombre_schema}}</small><br>
+                <small><b>Estado:</b>  {{trigger.esta_deshabilitado? "desactivado": "activado"}}</small><br>
+                <small><b>Delete Action:</b>  {{trigger.operacion}}</small>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Action Foreign Keys-->
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div id="light-blue" class="panel-heading">
+            <h3 class="panel-title">Action FKs</h3>
+            <span>{{actionFk.length}}</span>
+
+          </div>
+          <div class="panel-body text-wrap">
+            <ul class="list-group" *ngFor="let action of actionFk">
+              <li class="list-group-item text-wrap">
+                <small><b>Nombre:</b>  {{action.nombre_fk}}</small> <br>
+                <small><b>Tabla Padre:</b> {{action.tabla_padre}}</small><br>
+                <small><b>Tabla Ref:</b>  {{action.tabla_ref}}</small><br>
+                <small><b>Delete Action:</b>  {{action.delete_action}}</small><br>
+                <small><b>Update Action:</b>  {{action.update_action}}</small>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Todas las tablas-->
+      <div class="col-md-3">
+        <div  class="panel panel-default">
+          <div id="orange" class="panel-heading">
+            <h3 class="panel-title">Tablas</h3>
+            <span>{{tablas.length}}</span>
+          </div>
+          <div class="panel-body text-wrap">
+            <ul class="list-group" *ngFor="let tabla of tablas">
+              <li class="list-group-item text-wrap">
+                <small><b>Nombre:</b>  {{tabla.tabla}}</small>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Relaciones entre las tablas -->
+      <div class="col-md-3">
+        <div  class="panel panel-default">
+          <div id="green" class="panel-heading">
+            <h3 class="panel-title">Relaciones</h3>
+            <span>{{relacionesFk.length}}</span>
+
+          </div>
+          <div class="panel-body text-wrap">
+            <ul class="list-group" *ngFor="let relacion of relacionesFk">
+              <li class="list-group-item text-wrap">
+                <small><b>Nombre:</b>  {{relacion.nombre_relacion}}</small>
+              </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+

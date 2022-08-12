@@ -1,0 +1,59 @@
+
+.myContainerAbs {
+ 
+  background: #333333e6;
+  padding: 20px;
+}
+
+.myInput{
+  background: transparent;
+  border-radius: 0px;
+  border-color: #dddddd40;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.myInput::placeholder{
+  color: #ffffff;
+}
+
+.myInput:focus{
+  border-color: #dddd;
+  text-shadow: 0px;
+  box-shadow: none;
+}
+
+.myButton{
+  background: #00e099;
+  border: 0px;
+  border-radius: 0px;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.myButton:focus {
+  outline: 0px;
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open>.dropdown-toggle.btn-default.focus,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover {
+    color: #ddd;
+    background-color: #333;
+    border: 0px;
+    box-shadow: none;
+    border: 0px;
+    text-shadow: NONE;
+}
